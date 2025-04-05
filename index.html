@@ -10,9 +10,9 @@
   <div class="container">
     <h1>🎉 Happy Birthday Mom! 🎉</h1>
     <p class="intro">This website is from all of us — Dad, the kids, and your biggest fans. We love you so much 💖</p>
-
-    <img src="images/mom-photo.jpg" alt="Our lovely mom" class="main-photo"/>
-
+    <!-- Fixed the error: moved the onclick attribute outside of the alt attribute -->
+    <img src="images/mom-photo.jpg" alt="Our lovely mom" onclick="openSlideShow(0)" class="main-photo"/>
+    
     <section class="section">
       <h2>💖 Things We Love About You</h2>
       <ul>
@@ -20,28 +20,46 @@
         <li>The way you always make everyone feel loved</li>
         <li>Your delicious food (seriously, you're the GOAT cook) 😋</li>
         <li>Your smile that lights up our home</li>
+        <li>The sleepless nights you pull praying for us is just amazing may 🎉God bless you🙌🎉</li>
       </ul>
     </section>
 
     <section class="section">
       <h2>👨‍👩‍👧‍👦 Messages from the Family</h2>
       <div class="family-messages">
-        <p><strong>Dad:</strong> Thank you for being the heart of this home. I love you more each day.</p>
-        <p><strong>[Your Name]:</strong> You inspire me every day, Mom. Happy birthday!</p>
-        <p><strong>[Sibling 1]:</strong> You're the best! Thank you for all the hugs and snacks 😋</p>
-        <p><strong>[Sibling 2]:</strong> I hope your day is as sweet as you are ❤️</p>
+        <p><strong>[Dad]:</strong> Sometimes it feels like I'm dreaming, but then I realize it's all real. Thank you for being mine!</p>
+        <p><strong>[Vaillant]:</strong> You have been with me through the good times and bad times and from the bottom of my heart i thank you mom💝</p>
+        <p><strong>[Raziella]:</strong> You're the best! Thank you for all the hugs and snacks 😋</p>
+        <p><strong>[Euxane]:</strong> I hope your day is as sweet as you are ❤️</p>
+        <p><strong>[Gauvin]:</strong> I hope your day is as sweet as you are ❤️</p>
+        <p><strong>[Elion]:</strong> Merci d'être avec moi quand je suis malade, maman. Tu me berces. Je t'aime.🥰</p>
       </div>
     </section>
 
     <section class="section">
       <h2>📸 Some Favorite Memories</h2>
       <div class="gallery">
-        <img src="images/photo1.jpg" alt="Memory 1" />
-        <img src="images/photo2.jpg" alt="Memory 2" />
-        <img src="images/photo3.jpg" alt="Memory 3" />
+        <img src="images/photo1.jpg" alt="Memory 1" onclick="openSlideShow(1)"/>
+        <img src="images/photo2.jpg" alt="Memory 2" onclick="openSlideShow(2)"/>
+        <img src="images/photo3.jpg" alt="Memory 3" onclick="openSlideShow(3)"/>
+        <img src="images/photo4.jpg" alt="Memory 4" onclick="openSlideShow(4)"/>
+        <img src="images/photo5.jpg" alt="Memory 5" onclick="openSlideShow(5)"/>
+        <img src="images/photo6.jpg" alt="Memory 6" onclick="openSlideShow(6)"/>
+        <img src="images/photo7.jpg" alt="Memory 7" onclick="openSlideShow(7)"/>
+        <img src="images/photo8.jpg" alt="Memory 8" onclick="openSlideShow(8)"/>
+        <img src="images/photo9.jpg" alt="Memory 9" onclick="openSlideShow(9)"/>
+        <img src="images/photo10.jpg" alt="Memory 10" onclick="openSlideShow(10)"/>
+      </div>
+      <!-- Modal with a content wrapper to prevent event propagation -->
+      <div id="slideshowModal" class="slideshow-modal" onclick="closeSlideShow()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <span id="prev" class="slide-control" onclick="changeSlide(-1, event)">&#10094;</span>
+          <img id="slideshowImage" class="slideshow-image" src="" alt="Slideshow Image">
+          <span id="next" class="slide-control" onclick="changeSlide(1, event)">&#10095;</span>
+        </div>
       </div>
     </section>
-
+    <script src="script.js"></script>
     <footer>
       <p>Made with ❤️ by Dad, the kids, and your favorite child 😎</p>
     </footer>
